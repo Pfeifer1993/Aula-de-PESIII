@@ -1,0 +1,34 @@
+name: aulaGit-PESII-2024
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: demo para aula 
+        run: echo Exemplo de um git action
+      - name: lista diretorio
+        run: ls -la
+      - name: Ver ip da maquina
+        run: ifconfig
+        
+      - name: Verifica se tem python instalado
+        run: python --version
+      - name: Verifica se tem python3 instalado
+        run: python3 --version
+
+      - name: Instalando Node
+        uses: actions/setup-node@v1
+
+      - name: Verifica se Node instalou corretament
+        run: node -v 
+        
+      - name: Instalando o express
+        run: npm install express 
+
+      - name: lista diretorio
+        run: ls -la
