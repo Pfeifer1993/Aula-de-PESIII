@@ -1,61 +1,52 @@
-.conteudo {
-    font-family: 'Carrois Gothic', sans-serif;
-    margin: 70px;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Invest AI </title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para viewport -->
+</head>
+<body>
 
-.conteudo h1 {
-    font-size: 25px;
-}
+    <div id="nav"></div> 
 
-.conteudo p {
-    margin-top: 10px;
-    margin-left: 20px;
-}
+    <div class="conteudo">
+        
+        <!--banner-->
+        <section class="carousel">
+            <div class="paineis">
+                <article class="page1"><img src= "Imagens/Saiba.png" alt=""></article>
+                <article class="page2"><img src="Imagens/Saiba2.png" alt=""></article>
+            </div>
+        </section>
+        <!--banner-->
 
-.infosInvestidor p {
-    margin-top: 10px;
-    margin-left: 20px;
-    background: linear-gradient(to bottom, rgb(243, 240, 240) 90%, rgba(145, 144, 144, 0.9));
-    padding: 10px;
-    width: 50%;
-    border-radius: 15px;
-}
+        <h2>Venha fazer parte!</h2>
+        <a href="cadastro.html" class="button">Cadastre-se</a>
+        
+    </div>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('nav').innerHTML = html;
+                });
+        });
 
-.infosInvestidor {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 10px;
-}
+        var paineis = document.querySelector('.paineis');
+        var carousel = document.querySelector('.carousel');
+        var intervalo = 5000;
 
-.imagem{
-    text-align: center;
-}
+        function slider() {
+            paineis.style.transform = 'translate(' + -carousel.clientWidth + 'px)';
+            paineis.appendChild(paineis.firstElementChild);
+        }
 
-.imagem img {
-    width: 100%;
-}
-
-.botoes {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 125px;
-}
-
-.botoes a {
-    display: inline-block;
-    margin: 20px;
-    width: 200px; /* Largura dos botões */
-    padding: 15px; /* Espaçamento interno dos botões */
-    background-color: #000000;
-    color: white;
-    text-align: center;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background-color 0.3s; 
-    font-size: 14px;
-    border: none;
-}
-
-.botoes a:hover {
-    background-color: #333; 
-}
+        setInterval(slider, intervalo);
+    </script>
+</body>
+</html>
