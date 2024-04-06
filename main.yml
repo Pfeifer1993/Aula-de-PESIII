@@ -36,5 +36,5 @@ jobs:
         name: sincronia com o Glitch
         users: kanadgupta/glitch-sync@3.0.1
         with: 
-          auth-token: '${{ secrets.authToken}}'
+          authToken: '${{ secrets.authToken}}'
           projectId: '${{ secrets.projetctId }}'
